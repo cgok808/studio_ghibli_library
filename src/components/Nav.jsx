@@ -9,12 +9,12 @@ const Nav = () => {
           Icon/Logo
         </Link>
         <ul className='flex'>
-          <li className='ml-4'>
+          <li className='ml-4 font-bold'>
             <Link className='' to='/'>
               Home
             </Link>
           </li>
-          <li className='ml-4'>
+          <li className='ml-4 font-bold'>
             <Link className='' to='/books'>
               Books
             </Link>
