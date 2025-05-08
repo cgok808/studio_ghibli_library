@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
-    <nav className='bg-slate-600'>
+    <nav className='bg-[#b1b1b1]'>
       <div className='w-full max-w-7xl py-6 flex justify-between items-center mx-auto text-white'>
         <Link to='' className='flex'>
           Icon/Logo

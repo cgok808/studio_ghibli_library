@@ -8,7 +8,9 @@ const Footer = () => {
         <div className='w-full max-w-7xl my-0 mx-auto px-6 flex items-center flex-col'>
           <Link to='/'>Logo</Link>
           <div className='mt-5 mb-6'>
-            <Link className='px-2'>Home</Link>
+            <Link className='px-2' to='/'>
+              Home
+            </Link>
             <span href='/' className='cursor-not-allowed px-2'>
               About
             </span>

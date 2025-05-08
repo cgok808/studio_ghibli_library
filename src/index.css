@@ -8,3 +8,35 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+.transition__ease {
+  transition: all 300ms ease;
+}
+
+.subtitle__hover {
+  position: relative;
+}
+
+.box__shadow {
+  box-shadow: 0 4px 0 0 #fdf9ee;
+}
+
+.subtitle__hover:after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  height: 1px;
+  width: 0;
+  right: 0;
+  transition: all 300ms ease;
+  background-color: #fff;
+}
+
+.subtitle__hover:hover:after {
+  left: 0;
+  width: 100%;
+}

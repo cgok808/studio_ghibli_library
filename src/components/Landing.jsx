@@ -1,14 +1,23 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
     <section
       id='landing'
-      className='flex flex-col justify-center items-center h-screen'
+      className='flex flex-col justify-center items-center h-screen bg-slate-200'
     >
-      <div className='text-7xl'>Browse through the works of Studio Ghibli!</div>
-      <br></br>
-      <div className='text-6xl'>Books</div>
+      <div className='w-full max-w-3xl my-0 mx-auto h-full flex flex-col justify-around'>
+        <div className='flex flex-col items-center'>
+          <h1 className='text-5xl'>Explore films from Studio Ghibli!</h1>
+          <h2 className='text-3xl'>Find your favorite film with us!</h2>
+          <Link to='/books'>
+            <button className='bg-green-200 bg-no-repeat cursor-pointer outline-none border-2 border-white px-6 py-3 text-xl md:text-2xl rounded-xl box__shadow transition__ease hover:shadow-none hover:transition-all hover:translate-y-1 m-5'>
+              Browse Films
+            </button>
+          </Link>
+        </div>
+      </div>
     </section>
   );
 };
