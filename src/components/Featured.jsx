@@ -7,8 +7,8 @@ const Featured = () => {
     <section id='features'>
       <div className='py-14'>
         <div className='w-full max-w-7xl my-0 mx-auto py-0 px-6'>
-          <h2 className='flex justify-center'>
-            Featured <span className='text-green-500'>Books</span>
+          <h2 className='text-5xl font-semibold'>
+            Featured{""} <span className='text-green-500'>Films</span>
           </h2>
           <div className='flex flex-wrap my-0 -mx-6'>
             {films

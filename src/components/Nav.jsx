@@ -16,8 +16,8 @@ const Nav = () => {
             </Link>
           </li>
           <li className='ml-4 font-bold'>
-            <Link className='' to='/books'>
-              Books
+            <Link className='' to='/films'>
+              Catalogue
             </Link>
           </li>
           <li className='ml-4'>
