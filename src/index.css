@@ -40,3 +40,9 @@ html {
   left: 0;
   width: 100%;
 }
+
+/* FEATURES */
+
+#features {
+  padding-top: 8vw;
+}
