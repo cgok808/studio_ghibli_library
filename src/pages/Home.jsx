@@ -1,11 +1,13 @@
 import React from "react";
-import { Landing, Featured } from "../components";
+import { Landing, Featured, Discounted, Explore } from "../components";
 
 const Home = () => {
   return (
     <>
       <Landing />
       <Featured />
+      <Discounted />
+      <Explore />
     </>
   );
 };

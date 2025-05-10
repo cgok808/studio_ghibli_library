@@ -1,5 +1,5 @@
 import React from "react";
-import { Star } from "lucide-react";
+import { Star, StarHalf } from "lucide-react";
 
 const Rating = ({ rating }) => {
   return (
@@ -15,11 +15,10 @@ const Rating = ({ rating }) => {
             />
           ))}
           {!Number.isInteger(rating) && (
-            <Star
-              style={{
-                clipPath: "inset(0 50% 0 0)", // left half visible
-                fill: "yellow",
-              }}
+            <StarHalf
+              color='#fabf2a'
+              className='my-1 fill-[#fabf2a]'
+              size='22'
             />
           )}
         </div>

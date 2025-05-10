@@ -15,7 +15,7 @@ const Landing = () => {
           <h2 className='text-3xl font-semibold'>
             Find your favorite film with us!
           </h2>
-          <Link to='/books'>
+          <Link to='/films'>
             <button className='bg-green-200 bg-no-repeat cursor-pointer outline-none border-2 border-white px-6 py-3 text-xl md:text-2xl rounded-xl box__shadow transition__ease hover:shadow-none hover:transition-all hover:translate-y-1 m-5 font-semibold'>
               Browse Films
             </button>
