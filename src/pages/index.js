@@ -1,5 +1,5 @@
 import Home from "./Home";
-import Films from "./Films";
+import Movies from "./Movies";
 import Cart from "./Cart";
 
-export { Home, Films, Cart };
+export { Home, Movies, Cart };

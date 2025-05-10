@@ -1,7 +1,8 @@
-import { Home, Films, Cart } from "./pages";
+import { Home, Movies, Cart } from "./pages";
 import { Footer, Nav } from "./components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
+import { films } from "./data";
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/films' element={<Films />} />
+        <Route path='/films' element={<Movies films={films} />} />
         <Route path='/cart' element={<Cart />} />
       </Routes>
       <Footer />
