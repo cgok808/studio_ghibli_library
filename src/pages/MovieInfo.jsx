@@ -4,9 +4,17 @@ import { Rating, Price } from "../components/ui";
 import { ArrowLeft } from "lucide-react";
 import { BestMovies } from "../components/ui";
 
-const MovieInfo = ({ films }) => {
+const MovieInfo = ({ films, addToCart, cart }) => {
   const { id } = useParams();
   const film = films.find((film) => +film.id === +id);
+
+  function addMovieToCart(film) {
+    addToCart(film);
+  }
+
+  function movieExistsOnCart() {
+    return cart.find((film) => +film.id === +id);
+  }
   return (
     <div className='flex-1 flex flex-col'>
       <main id='movies__main' className='flex-1'>
@@ -53,6 +61,20 @@ const MovieInfo = ({ films }) => {
                     blanditiis velit modi?
                   </p>
                 </div>
+                {movieExistsOnCart() ? (
+                  <Link to="/cart">
+                    <button className='bg-green-200 bg-no-repeat cursor-pointer outline-none border-2 border-white px-6 py-3 text-xl md:text-2xl rounded-xl box__shadow transition__ease hover:shadow-none hover:transition-all hover:translate-y-1 m-5 font-semibold'>
+                      Checkout
+                    </button>
+                  </Link>
+                ) : (
+                  <button
+                    className='bg-green-200 bg-no-repeat cursor-pointer outline-none border-2 border-white px-6 py-3 text-xl md:text-2xl rounded-xl box__shadow transition__ease hover:shadow-none hover:transition-all hover:translate-y-1 m-5 font-semibold'
+                    onClick={() => addMovieToCart(film)}
+                  >
+                    Add to Cart
+                  </button>
+                )}
               </div>
             </div>
             <div>
