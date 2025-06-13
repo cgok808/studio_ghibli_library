@@ -21,7 +21,7 @@ const Movie = ({ film }) => {
   });
 
   return (
-    <div className='w-1/4 p-6 transition__ease'>
+    <div className='w-1/2 md:w-1/4 p-6 transition__ease'>
       {img ? (
         <>
           <Link to={`/films/${film.id}`}>

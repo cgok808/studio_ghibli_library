@@ -29,14 +29,14 @@ const MovieInfo = ({ films, addToCart, cart }) => {
               </Link>
             </div>
             <div className='flex'>
-              <figure className='w-2/5 justify-start'>
+              <figure className='w-full md:w-2/5 justify-start'>
                 <img
                   src={film.image}
                   alt=''
                   className='max-h-[500px] w-auto max-w-full rounded-lg'
                 />
               </figure>
-              <div className='w-3/5 py-4 px-8 flex flex-col items-center'>
+              <div className='w-full md:w-3/5 py-4 px-8 flex flex-col items-center'>
                 <h2 className='mb-2'>{film.title}</h2>
                 <Rating rating={film.rating} />
                 <div>
