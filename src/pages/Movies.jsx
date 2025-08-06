@@ -38,8 +38,8 @@ const Movies = ({ films: initialFilms }) => {
         <section>
           <div className='py-6 px-0 '>
             <div className='w-full max-w-7xl mx-auto'>
-              <div className='flex justify-between items-center py-0 px-6'>
-                <h2 className='mb-0'>All Movies</h2>
+              <div className='flex justify-between items-center py-4 px-6'>
+                <h2 className='mb-0 font-bold text-3xl'>All Movies</h2>
                 <select
                   id='filter'
                   defaultValue='DEFAULT'

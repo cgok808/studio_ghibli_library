@@ -8,7 +8,9 @@ const Discounted = () => {
       <div className='py-14 px-0'>
         <div className='w-full max-w-7xl my-0 mx-auto py-0 px-6'>
           <h2 className='text-5xl font-semibold'>
-            Discounted <span className='text-green-500'>Films</span>
+            <h2 className='text-5xl font-semibold'>
+              <span className='text-green-500'>Discounted</span> Films
+            </h2>
           </h2>
           <div className='flex flex-wrap my-0 -m-6'>
             {films

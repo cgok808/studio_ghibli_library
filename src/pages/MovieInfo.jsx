@@ -21,11 +21,9 @@ const MovieInfo = ({ films, addToCart, cart }) => {
         <div className='py-6 px-0'>
           <div className='w-full max-w-7xl my-0 mx-auto py-0 px-6'>
             <div className='py-0 px-6 text-2xl color-[#242424] flex items-center'>
-              <Link to='/films'>
-                <ArrowLeft />
-              </Link>
-              <Link to='/films'>
-                <h2 className='ml-4 mb-0'>Movies</h2>
+              <Link to='/films' className='flex mb-4'>
+                <ArrowLeft className="w-8 h-8" />
+                <h2 className='ml-4 -mt-1 font-bold text-4xl'>Movies</h2>
               </Link>
             </div>
             <div className='flex'>
@@ -37,16 +35,16 @@ const MovieInfo = ({ films, addToCart, cart }) => {
                 />
               </figure>
               <div className='w-full md:w-3/5 py-4 px-8 flex flex-col items-center'>
-                <h2 className='mb-2'>{film.title}</h2>
+                <h2 className='mb-2 text-3xl font-bold'>{film.title}</h2>
                 <Rating rating={film.rating} />
-                <div>
+                <div className='font-bold'>
                   <Price
                     originalPrice={film.originalPrice}
                     salePrice={film.salePrice}
                   />
                 </div>
                 <div className='mb-4'>
-                  <h3 className='mb-2'>Summary</h3>
+                  <h3 className='mb-2 text-lg font-bold'>Summary:</h3>
                   <p className='mb-4'>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Explicabo eaque ipsam iusto, quia cumque placeat dolore
@@ -62,7 +60,7 @@ const MovieInfo = ({ films, addToCart, cart }) => {
                   </p>
                 </div>
                 {movieExistsOnCart() ? (
-                  <Link to="/cart">
+                  <Link to='/cart'>
                     <button className='bg-green-200 bg-no-repeat cursor-pointer outline-none border-2 border-white px-6 py-3 text-xl md:text-2xl rounded-xl box__shadow transition__ease hover:shadow-none hover:transition-all hover:translate-y-1 m-5 font-semibold'>
                       Checkout
                     </button>
@@ -80,7 +78,9 @@ const MovieInfo = ({ films, addToCart, cart }) => {
             <div>
               <div>
                 <div>
-                  <h2>Recommended Movies</h2>
+                  <h2 className='mt-16 text-5xl font-bold'>
+                    Recommended Movies
+                  </h2>
                 </div>
                 <BestMovies id={id} />
               </div>

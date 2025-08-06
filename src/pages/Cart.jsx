@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Cart = ({cart, changeQuantity, removeItem, totals}) => {
+const Cart = ({ cart, changeQuantity, removeItem, totals }) => {
   return (
-    <div className='bg-green-400 flex-1 flex flex-col'>
+    <div className='bg-green-400'>
       <div className='flex-1 bg-gray-100 '>
         <div className='py-6 px-0 '>
           <div className='w-full max-w-7xl my-0 mx-auto py-0 px-6'>
             <div className='py-0 px-6 mb-2 text-3xl text-[#242424] flex items-center'>
-              <h2 className='mb-4'>Cart</h2>
+              <h2 className='mb-4 font-bold'>Cart</h2>
             </div>
             <div>
               <div className='bg-[#42D67B] my-0 mx-6 py-2 px-4 text-white flex'>
@@ -29,7 +29,7 @@ const Cart = ({cart, changeQuantity, removeItem, totals}) => {
                           src={item.image}
                         />
                         <div className='flex flex-col justify-center py-2 px-4'>
-                          <span className='text-xl mb-4'>{item.title}</span>
+                          <span className='text-xl mb-4 font-bold'>{item.title}</span>
                           <span className='mb-4'>${itemPrice.toFixed(2)}</span>
                           <button
                             className='bg-transparent text-[#cf0000] border-0 pl-0 w-12'
@@ -59,7 +59,9 @@ const Cart = ({cart, changeQuantity, removeItem, totals}) => {
                 })}
                 {(!cart || !cart.length) && (
                   <div className='flex flex-col items-center justify-center'>
-                    <h2>You don't have any movies in your cart!</h2>
+                    <h2 className='text-2xl font-bold my-10'>
+                      You don't have any movies in your cart!
+                    </h2>
                     <Link to='/films'>
                       <button className='bg-green-200 bg-no-repeat cursor-pointer outline-none border-2 border-white px-6 py-3 text-xl md:text-2xl rounded-xl box__shadow transition__ease hover:shadow-none hover:transition-all hover:translate-y-1 m-5 font-semibold'>
                         Browse movies
