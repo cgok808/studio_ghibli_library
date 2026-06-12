@@ -3,18 +3,23 @@ import { Link } from "react-router-dom";
 
 const Explore = () => {
   return (
-    <section id='explore' className='bg-[#e0dcd7]'>
-      <div className='px-14 py-0'>
-        <div className='w-full max-w-7xl my-0 mx-auto py-0 px-6 flex flex-col items-center'>
-          <h2 className='text-3xl font-semibold mt-10'>
-            Explore more <span className='text-green-500'>movies</span>
-          </h2>
-          <Link to='/films'>
-            <button className='bg-green-200 bg-no-repeat cursor-pointer outline-none border-2 border-white px-6 py-3 text-xl md:text-2xl rounded-xl box__shadow transition__ease hover:shadow-none hover:transition-all hover:translate-y-1 m-5 font-semibold'>
-              Browse Films
-            </button>
-          </Link>
-        </div>
+    <section id="explore" className="bg-green-900 py-20">
+      <div className="w-full max-w-3xl mx-auto px-6 text-center">
+        <p className="text-green-300 font-bold tracking-widest uppercase text-xs mb-4 font-sans">
+          The full collection
+        </p>
+        <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-4">
+          Find Your Next{" "}
+          <span className="italic text-green-300">Adventure</span>
+        </h2>
+        <p className="text-green-200 text-lg mb-10 font-sans">
+          Browse the full catalogue and discover your next favorite Ghibli film.
+        </p>
+        <Link to="/films">
+          <button className="bg-white text-green-900 cursor-pointer outline-none border-2 border-white px-10 py-4 text-lg rounded-xl box__shadow__white transition__ease hover:shadow-none hover:translate-y-1 font-semibold tracking-wide font-sans">
+            Browse Films
+          </button>
+        </Link>
       </div>
     </section>
   );

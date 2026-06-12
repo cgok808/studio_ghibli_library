@@ -1,57 +1,59 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import { Rating, Price } from "../components/ui";
+import { Rating, Price, BestMovies } from "../components/ui";
 import { ArrowLeft } from "lucide-react";
-import { BestMovies } from "../components/ui";
 
 const MovieInfo = ({ films, addToCart, cart }) => {
   const { id } = useParams();
   const film = films.find((film) => +film.id === +id);
 
-  function addMovieToCart(film) {
-    addToCart(film);
-  }
-
   function movieExistsOnCart() {
     return cart.find((film) => +film.id === +id);
   }
+
   return (
-    <div className='flex-1 flex flex-col'>
-      <main id='movies__main' className='flex-1'>
-        <div className='py-6 px-0'>
-          <div className='w-full max-w-7xl my-0 mx-auto py-0 px-6'>
-            <div className='py-0 px-6 text-2xl color-[#242424] flex items-center'>
-              <Link to='/films' className='flex mb-4'>
-                <ArrowLeft className="w-8 h-8" />
-                <h2 className='ml-4 -mt-1 font-bold text-4xl'>Movies</h2>
-              </Link>
-            </div>
-            <div className='flex'>
-              <figure className='w-full md:w-2/5 justify-start'>
+    <div className="flex-1 flex flex-col bg-cream min-h-screen">
+      <main className="flex-1">
+        <div className="py-10">
+          <div className="w-full max-w-7xl mx-auto px-6">
+            <Link
+              to="/films"
+              className="inline-flex items-center gap-2 text-green-700 hover:text-green-900 font-semibold transition__ease mb-8 font-sans"
+            >
+              <ArrowLeft size={18} />
+              <span>Back to Films</span>
+            </Link>
+
+            <div className="flex flex-col md:flex-row gap-10 mb-16">
+              <figure className="md:w-2/5 flex-shrink-0">
                 <img
                   src={film.image}
-                  alt=''
-                  className='max-h-[500px] w-auto max-w-full rounded-lg'
+                  alt={film.title}
+                  className="max-h-[540px] w-auto max-w-full rounded-2xl shadow-lg"
                 />
               </figure>
-              <div className='w-full md:w-3/5 py-4 px-8 flex flex-col items-center'>
-                <h2 className='mb-2 text-3xl font-bold'>{film.title}</h2>
+
+              <div className="md:w-3/5 flex flex-col">
+                <h2 className="font-heading text-4xl md:text-5xl font-bold text-green-950 mb-3 leading-tight">
+                  {film.title}
+                </h2>
                 <Rating rating={film.rating} />
-                <div className='font-bold'>
-                  <Price
-                    originalPrice={film.originalPrice}
-                    salePrice={film.salePrice}
-                  />
-                </div>
-                <div className='mb-4'>
-                  <h3 className='mb-2 text-lg font-bold'>Summary:</h3>
-                  <p className='mb-4'>
+                <Price
+                  originalPrice={film.originalPrice}
+                  salePrice={film.salePrice}
+                />
+
+                <div className="mb-8">
+                  <h3 className="font-heading text-xl font-bold text-green-900 mb-3">
+                    Summary
+                  </h3>
+                  <p className="text-gray-500 leading-relaxed mb-4 font-sans">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Explicabo eaque ipsam iusto, quia cumque placeat dolore
                     obcaecati quis deserunt magni sapiente distinctio, in optio
                     sed impedit amet voluptatem totam alias.
                   </p>
-                  <p className='mb-4'>
+                  <p className="text-gray-500 leading-relaxed font-sans">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Cum ratione autem totam modi quisquam porro? Nostrum
                     consequatur totam voluptates quae alias provident,
@@ -59,31 +61,32 @@ const MovieInfo = ({ films, addToCart, cart }) => {
                     blanditiis velit modi?
                   </p>
                 </div>
+
                 {movieExistsOnCart() ? (
-                  <Link to='/cart'>
-                    <button className='bg-green-200 bg-no-repeat cursor-pointer outline-none border-2 border-white px-6 py-3 text-xl md:text-2xl rounded-xl box__shadow transition__ease hover:shadow-none hover:transition-all hover:translate-y-1 m-5 font-semibold'>
-                      Checkout
+                  <Link to="/cart" className="self-start">
+                    <button className="bg-green-800 text-white cursor-pointer outline-none border-2 border-green-800 px-10 py-4 text-lg rounded-xl box__shadow transition__ease hover:shadow-none hover:translate-y-1 font-semibold font-sans">
+                      Go to Checkout
                     </button>
                   </Link>
                 ) : (
                   <button
-                    className='bg-green-200 bg-no-repeat cursor-pointer outline-none border-2 border-white px-6 py-3 text-xl md:text-2xl rounded-xl box__shadow transition__ease hover:shadow-none hover:transition-all hover:translate-y-1 m-5 font-semibold'
-                    onClick={() => addMovieToCart(film)}
+                    className="self-start bg-green-800 text-white cursor-pointer outline-none border-2 border-green-800 px-10 py-4 text-lg rounded-xl box__shadow transition__ease hover:shadow-none hover:translate-y-1 font-semibold font-sans"
+                    onClick={() => addToCart(film)}
                   >
                     Add to Cart
                   </button>
                 )}
               </div>
             </div>
+
             <div>
-              <div>
-                <div>
-                  <h2 className='mt-16 text-5xl font-bold'>
-                    Recommended Movies
-                  </h2>
-                </div>
-                <BestMovies id={id} />
-              </div>
+              <p className="text-green-700 font-bold tracking-widest uppercase text-xs mb-2 font-sans">
+                You may also like
+              </p>
+              <h2 className="font-heading text-4xl font-bold text-green-950 mb-8">
+                Recommended Films
+              </h2>
+              <BestMovies id={id} />
             </div>
           </div>
         </div>
