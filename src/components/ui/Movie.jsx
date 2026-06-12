@@ -8,6 +8,7 @@ const Movie = ({ film }) => {
   const mountedRef = useRef(true);
 
   useEffect(() => {
+    mountedRef.current = true;
     const image = new Image();
     image.src = film.image;
     image.onload = () => {
@@ -17,7 +18,10 @@ const Movie = ({ film }) => {
         }
       });
     };
-  });
+    return () => {
+      mountedRef.current = false;
+    };
+  }, [film.image]);
 
   return (
     <div className="w-1/2 md:w-1/4 p-3">
